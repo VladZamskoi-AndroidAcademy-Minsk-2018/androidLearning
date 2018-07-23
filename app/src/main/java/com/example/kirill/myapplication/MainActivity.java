@@ -11,7 +11,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private Button applyButton;
-    private Button emailButton;
     private EditText editText;
 
     @Override
@@ -19,12 +18,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        emailButton = (Button) findViewById(R.id.button_email);
+        Button emailButton = findViewById(R.id.button_email);
+        Button applyButton = findViewById(R.id.button_activity);
 
         emailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView textView = (TextView) findViewById(R.id.plain_text_input);
+                TextView textView = findViewById(R.id.plain_text_input);
                 final String text = textView.getText().toString();
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
                 emailIntent.setType("plain/text");
@@ -36,18 +36,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        applyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            Intent i = new Intent(MainActivity.this, LoveActivity.class);
+            TextView textView = findViewById(R.id.plain_text_input);
+            String text = textView.getText().toString();
+
+            Bundle bundle = new Bundle();
+            bundle.putString("stuff", text);
+
+            i.putExtras(bundle);
+
+            startActivity(i);
+            }
+        });
+        }
+
     }
-
-    public void sendMessage(View view) {
-        Intent i = new Intent(MainActivity.this, LoveActivity.class);
-        TextView textView = (TextView) findViewById(R.id.plain_text_input);
-        String text = textView.getText().toString();
-
-        Bundle bundle = new Bundle();
-        bundle.putString("stuff", text);
-
-        i.putExtras(bundle);
-
-        startActivity(i);
-    }
-}
