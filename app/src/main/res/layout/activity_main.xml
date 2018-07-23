@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/db1_root"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:gravity="center|bottom"
+    android:orientation="vertical" >
+
+     <EditText
+        android:id="@+id/plain_text_input"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:hint="@string/type_your_message_hear"
+        android:inputType="text"/>
+
+
+    <Button
+        android:id="@+id/button_activity"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/plain_text_input"
+        android:layout_width="match_parent"
+        android:background="@color/aqua"
+        android:layout_margin="10dp"
+        android:onClick="sendMessage"
+        android:text="@string/activity" />
+
+
+    <Button
+        android:id="@+id/button_email"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/button_activity"
+        android:background="@color/lime"
+        android:layout_margin="10dp"
+        android:text="email" />
+
+</LinearLayout>
+
+</LinearLayout>
