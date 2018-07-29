@@ -1,45 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:id="@+id/db1_root"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical" >
-
-<LinearLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1"
-    android:gravity="center|bottom"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    
+    <RelativeLayout
+        android:id="@+id/topRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/firstImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_launcher"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_toRightOf="@id/frameLayout"
+        android:layout_alignBottom="@id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/firstText"
+                android:text="ID addicts"
+                android:width="200dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/secondImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/firstText"
+                android:src="@mipmap/ic_launcher_round"/>
+            <TextView
+                android:id="@+id/secondText"
+                android:text="You; Photo message"
+                android:layout_alignTop="@id/secondImage"
+                android:layout_below="@id/firstText"
+                android:layout_toRightOf="@id/secondImage"
+                android:layout_toEndOf="@id/secondImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/yesterday"
+                android:text="Yesterday"
+                android:layout_alignTop="@id/firstText"
+                android:layout_toRightOf="@id/firstText"
+                android:layout_toEndOf="@id/firstText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+                </RelativeLayout>
+    </RelativeLayout>
 
-     <EditText
-        android:id="@+id/plain_text_input"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/smallImage"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignRight="@id/topRelativeLayout"
+        android:layout_alignBottom="@id/topRelativeLayout"
+        android:layout_gravity="bottom|right"
+        android:src="@mipmap/ic_launcher"/>
+
+    <LinearLayout
+        android:id="@+id/topLinerLayout"
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:hint="@string/type_your_message_hear"
-        android:inputType="text"/>
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
+        android:weightSum="4">
 
+    <TextView
+        android:id="@+id/fishText"
+        android:text="Lorem ipsum dolor sit amet,
+        consectetuer adipiscing elit.
+        Aenean commodo ligula eget dolor.
+        Aenean massa. Cum sociis natoque
+         penatibus et magnis dis parturient m"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="TExt like button number 1"
+            android:layout_weight="3"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="TExt like button number 1"
+            android:layout_weight="3"/>
+    </LinearLayout>
 
     <Button
-        android:id="@+id/button_activity"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/plain_text_input"
+        android:id="@+id/browser"
         android:layout_width="match_parent"
-        android:background="@color/aqua"
-        android:layout_margin="10dp"
-        android:text="@string/activity" />
-
-
-    <Button
-        android:id="@+id/button_email"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_below="@id/button_activity"
-        android:background="@color/lime"
-        android:layout_margin="10dp"
-        android:text="email" />
-
-</LinearLayout>
-
-</LinearLayout>
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="Browser"
+        android:layout_weight="3"/>
+</RelativeLayout>
