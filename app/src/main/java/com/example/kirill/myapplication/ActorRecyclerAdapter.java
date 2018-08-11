@@ -10,8 +10,6 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-//import androidx.recyclerview.widget.RecyclerView;
-
 
 public class ActorRecyclerAdapter extends RecyclerView.Adapter<ActorRecyclerAdapter.ViewHolder> {
 

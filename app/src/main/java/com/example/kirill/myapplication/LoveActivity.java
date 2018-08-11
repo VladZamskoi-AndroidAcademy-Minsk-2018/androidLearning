@@ -8,8 +8,6 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-//import androidx.appcompat.app.AppCompatActivity;
-
 public class LoveActivity extends AppCompatActivity {
 
     private static final String USER_TEXT = "flagResId";
