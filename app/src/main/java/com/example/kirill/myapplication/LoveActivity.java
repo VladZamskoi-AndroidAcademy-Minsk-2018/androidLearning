@@ -3,12 +3,11 @@ package com.example.kirill.myapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoveActivity extends AppCompatActivity {
 
