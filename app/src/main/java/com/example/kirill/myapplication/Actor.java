@@ -17,4 +17,7 @@ public class Actor {
 
     public String getName() { return name; }
 
+    public Uri getAvatar() {
+        return avatar;
+    }
 }

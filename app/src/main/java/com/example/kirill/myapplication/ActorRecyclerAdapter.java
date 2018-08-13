@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
+import com.bumptech.glide.Glide;
 
 
 public class ActorRecyclerAdapter extends RecyclerView.Adapter<ActorRecyclerAdapter.ViewHolder> {
@@ -47,9 +48,6 @@ public class ActorRecyclerAdapter extends RecyclerView.Adapter<ActorRecyclerAdap
     public void onBindViewHolder(ViewHolder holder, int position) {
         // get our custom object from our dataset at this position
         Actor actor = actors.get(position);
-
-        // Fill views with our data
+        Glide.with(holder.avatar).load(actor.getAvatar()).into(holder.avatar);
     }
-
-
 }
